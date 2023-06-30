@@ -1,0 +1,109 @@
+header {
+    transition: 0.3s;
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    width: 100%;
+    height: 5rem;
+  }
+header .header-content {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+header .header-content .header-img {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    border-radius: 50%;
+  }
+header .header-content .header-img img {
+    border-radius: 100%;
+    width: 3.75rem;
+    height: 3.75rem;
+  }
+header .header-content .header-img span {
+    color: var(--white-color);
+    margin-left: 10px;
+  }
+header .header-content nav ul {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+  }
+header .header-content nav ul li {
+    position: relative;
+  }
+header .header-content nav ul li a {
+    color: var(--white-color);
+    transition: 0.3s;
+    position: relative;
+    transition: 0.3s;
+  }
+header .header-content nav ul li a:after {
+    position: absolute;
+    content: "";
+    bottom: -10px;
+    width: 0%;
+    height: 3px;
+    background: var(--white-color);
+    border-radius: 5px;
+    display: none;
+  }
+header .header-content nav ul li a:hover:after {
+    animation: transformWidth ease 0.3s;
+    width: 100%;
+    left: 0%;
+    display: block;
+  }
+header .header-content nav ul li:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    bottom: -10px;
+    left: 0;
+    height: 3px;
+    border-radius: 5px;
+    background: var(--white-color);
+    display: none;
+  }
+header .header-content nav ul li.active:after {
+    display: block;
+  }
+header .header-content #header-menu {
+    display: none;
+  }
+header .header-content #header-menu i {
+    color: var(--white-color);
+    font-size: 1.25rem;
+  }
+
+@media screen and (max-width:1024px) {
+    .grid{
+        padding: 0 1.25rem;
+    }
+        header .header-content nav {
+        display: none;
+        position: absolute;
+        right: 0;
+        top: 100%;
+        background: var(--black-color);
+        width: 30vw;
+        height: 100vh;
+        animation: animationSlideToggle ease 0.5s;
+        z-index: 10;
+      }
+        header .header-content nav ul {
+        flex-direction: column;
+      }
+        header .header-content nav.active {
+        display: block;
+      }
+        header .header-content #header-menu {
+        display: block;
+      }
+        header .header-content #header-menu i {
+        color: var(--white-color);
+      }
+}

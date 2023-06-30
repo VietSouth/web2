@@ -1,0 +1,12 @@
+@media screen and (max-width:1024px) {
+    .list-products{
+        grid-template-columns: auto auto auto !important;
+    }
+}
+
+@media screen and (max-width:767px) {
+    .list-products{
+        grid-template-columns: auto auto !important;
+    }
+}
+    

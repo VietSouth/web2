@@ -1,0 +1,18 @@
+@media screen and (max-width:1024px) {
+    #wrapperFeedbacks #feedbacks-content article .feedbacks-text-list,
+    #wrapperFeedbacks #gallery article .feedbacks-text-list{
+        grid-template-columns: auto auto auto;
+    }
+    #wrapperFeedbacks #feedbacks-content article .feedbacks-text-list li img,
+     #wrapperFeedbacks #gallery article .feedbacks-text-list li{
+        height: 250px;
+    }
+}
+
+@media screen and (max-width:767px) {
+    #wrapperFeedbacks #feedbacks-content article .feedbacks-text-list,
+    #wrapperFeedbacks #gallery article .feedbacks-text-list{
+        grid-template-columns: auto auto;
+    }
+}
+    

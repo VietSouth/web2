@@ -1,0 +1,707 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+.grid {
+  width: 1200px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+::-webkit-scrollbar-track {
+  display: none;
+}
+
+button, input {
+  border: none;
+  outline: none;
+}
+
+:root {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  --black-color: black;
+  --white-color: white;
+}
+
+#wrapperHome {
+  overflow: hidden;
+}
+#wrapperHome #index-banner {
+  position: relative;
+  height: 100vh;
+  background-image: url(./img/index_banner-2.jpg);
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+}
+#wrapperHome #index-banner .banner-content {
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  height: max-content;
+}
+#wrapperHome #index-banner .banner-content h1 {
+  font-size: 3rem;
+  text-shadow: 0 5px 5px var(--black-color);
+}
+#wrapperHome #index-banner .banner-content p {
+  font-size: 1.25rem;
+  width: 37.5rem;
+}
+#wrapperHome #index-banner .banner-content h1, #wrapperHome #index-banner .banner-content p {
+  color: var(--white-color);
+}
+#wrapperHome #index-banner .banner-content button {
+  width: 5rem;
+  height: 3.125rem;
+  border-radius: 10px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+#wrapperHome #index-banner .banner-content button a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  line-height: 50px;
+  color: var(--black-color);
+}
+#wrapperHome #index-banner .banner-content button:hover {
+  background: var(--black-color);
+  cursor: pointer;
+}
+#wrapperHome #index-banner .banner-content button:hover a {
+  color: var(--white-color);
+}
+#wrapperHome #index-banner::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  content: "";
+  background: rgba(0, 0, 0, 0.5);
+}
+#wrapperHome #index-services {
+  padding-top: 2.5rem;
+}
+#wrapperHome #index-services .index-services-content {
+  height: max-content;
+}
+#wrapperHome #index-services .index-services-content h2 {
+  text-align: center;
+  font-weight: bold;
+  font-weight: 2rem;
+}
+#wrapperHome #index-services .index-services-content ul.list-index-services {
+  padding-top: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2.5rem;
+  height: max-content;
+}
+#wrapperHome #index-services .index-services-content ul.list-index-services li {
+  overflow: hidden;
+  border-radius: 10px;
+  width: 18.75rem;
+  height: 18.75rem;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+#wrapperHome #index-services .index-services-content ul.list-index-services li p {
+  display: block;
+  color: var(--white-color);
+  text-align: center;
+  background: var(--black-color);
+  height: 100px;
+  position: absolute;
+  bottom: 0;
+  padding: 10px;
+  z-index: 5;
+  display: none;
+  transition: 0.3s;
+  animation: animationSlideToTop ease 0.5s;
+  pointer-events: none;
+}
+#wrapperHome #index-services .index-services-content ul.list-index-services li:after {
+  transition: 0.3s;
+  display: none;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  animation: animationSlideToTop ease 0.3s;
+}
+#wrapperHome #index-services .index-services-content ul.list-index-services li:hover:after {
+  cursor: pointer;
+  display: block;
+}
+#wrapperHome #index-services .index-services-content ul.list-index-services li:hover p {
+  display: block;
+}
+#wrapperHome #index-branding {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+#wrapperHome #index-branding .index-branding-content h2 {
+  text-align: center;
+}
+#wrapperHome #index-branding .index-branding-content .index-list-kinds {
+  display: flex;
+  justify-content: center;
+  gap: 2.5rem;
+  padding-top: 1.25rem;
+}
+#wrapperHome #index-branding .index-branding-content .index-list-kinds li {
+  position: relative;
+  cursor: pointer;
+}
+#wrapperHome #index-branding .index-branding-content .index-list-kinds li:after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  border-radius: 5px;
+  background: var(--black-color);
+  display: none;
+  animation: transformWidth ease 1s;
+}
+#wrapperHome #index-branding .index-branding-content .index-list-kinds li:hover:after {
+  display: block;
+}
+#wrapperHome #index-branding .index-branding-content .index-list-kinds li.active:after {
+  display: block;
+}
+#wrapperHome #index-branding .index-branding-content .index-kind-items-container ul.off {
+  display: none;
+}
+#wrapperHome #index-branding .index-branding-content .index-kind-items-container ul {
+  padding-top: 1.25rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+}
+#wrapperHome #index-branding .index-branding-content .index-kind-items-container ul li {
+  flex: 1 0 calc(25% - 1.25rem);
+  height: 18.75rem;
+  background-position: center;
+  background-size: cover;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+}
+#wrapperHome #index-branding .index-branding-content .index-kind-items-container ul li p {
+  display: block;
+  color: var(--white-color);
+  text-align: center;
+  background: var(--black-color);
+  height: 100px;
+  position: absolute;
+  bottom: 0;
+  padding: 10px;
+  z-index: 5;
+  display: none;
+  transition: 0.3s;
+  animation: animationSlideToTop ease 0.5s;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  line-height: 18.75rem;
+  background: rgba(0, 0, 0, 0.5);
+}
+#wrapperHome #index-branding .index-branding-content .index-kind-items-container ul li:hover p {
+  display: block;
+}
+#wrapperHome #index-sub-banner {
+  background-color: var(--black-color);
+}
+#wrapperHome #index-sub-banner .index-sub-banner-content {
+  background-image: url(/img/index_banner-2.jpg);
+  height: 18.75rem;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+@media screen and (max-width: 1024px) {
+  #wrapperHome #index-banner .banner-content {
+    align-items: center;
+  }
+  #wrapperHome #index-branding .index-branding-content .index-kind-items-container ul li {
+    flex: 1 0 calc(33.3333% - 1.25rem);
+  }
+  #wrapperHome #index-footer article .index-footer-content {
+    grid-template-columns: auto;
+  }
+  #wrapperHome #index-footer article .index-footer-content .index-footer-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  #wrapperHome #index-footer article .index-footer-content .index-footer-item p {
+    text-align: center;
+  }
+  #wrapperHome #index-footer article .index-footer-content .index-footer-item .index-footer-social-media {
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+}
+@media screen and (max-width: 780px) {
+  #wrapperHome #index-banner .banner-content {
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    height: max-content;
+  }
+  #wrapperHome #index-banner .banner-content h1 {
+    text-align: center;
+  }
+  #wrapperHome #index-banner .banner-content p {
+    width: 100vw;
+    text-align: center;
+  }
+  #wrapperHome #index-services .index-services-content ul.list-index-services {
+    flex-direction: column;
+  }
+  #wrapperHome #index-branding .index-branding-content .index-kind-items-container ul li {
+    flex: 1 0 calc(50% - 1.25rem);
+    height: 18.75rem;
+    background-position: center;
+    background-size: cover;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+  }
+  #wrapperHome #index-branding .index-branding-content .index-kind-items-container ul li p {
+    display: block;
+    color: var(--white-color);
+    text-align: center;
+    background: var(--black-color);
+    height: 100px;
+    position: absolute;
+    bottom: 0;
+    padding: 10px;
+    z-index: 5;
+    display: none;
+    transition: 0.3s;
+    animation: animationSlideToTop ease 0.5s;
+    pointer-events: none;
+    width: 100%;
+    height: 100%;
+    line-height: 18.75rem;
+    background: rgba(0, 0, 0, 0.5);
+  }
+  #wrapperHome #index-branding .index-branding-content .index-kind-items-container ul li:hover p {
+    display: block;
+  }
+}
+
+#wrapperStory {
+  overflow: hidden;
+  background-image: url(./img/story-background.jpg);
+  background-position: center;
+  background-size: contain;
+  background-repeat: repeat;
+}
+#wrapperStory #about-content {
+  padding-top: 5rem;
+}
+#wrapperStory #about-content article .content-item {
+  padding: 2.5rem 0;
+}
+#wrapperStory #about-content article .content-item h2 {
+  text-align: center;
+  font-weight: bold;
+  color: var(--white-color);
+}
+#wrapperStory #about-content article .content-item div {
+  padding-top: 1.25rem;
+  display: grid;
+  gap: 2.5rem;
+  grid-template-columns: auto auto;
+  grid-template-rows: 18.75rem;
+}
+#wrapperStory #about-content article .content-item div .content-item-img img {
+  border-radius: 10px;
+  width: 100%;
+  height: 100%;
+}
+#wrapperStory #about-content article .content-item div .content-item-description {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--white-color);
+}
+#wrapperStory #about-content article .content-item div .content-item-description h3 {
+  width: 100%;
+  padding-bottom: 1.25rem;
+  text-align: right;
+}
+
+#wrapperPolicy header {
+  border-bottom: var(--white-color) solid 1px;
+}
+#wrapperPolicy #content {
+  background: var(--black-color);
+  padding: 5rem 0;
+}
+#wrapperPolicy #content article {
+  padding-top: 2.5rem;
+  display: grid;
+  gap: 2.5rem;
+}
+#wrapperPolicy #content article .content-item {
+  color: var(--white-color);
+  display: grid;
+  gap: 1.25rem;
+}
+#wrapperPolicy #content article .content-item span {
+  color: red;
+  padding-right: 5px;
+}
+
+#wrapperHighlights {
+  padding-top: 5rem;
+}
+#wrapperHighlights #highlights-banner {
+  padding-bottom: 2.5rem;
+}
+#wrapperHighlights #highlights-banner article {
+  position: relative;
+  height: 35rem;
+}
+#wrapperHighlights #highlights-banner article button {
+  position: absolute;
+  top: 50%;
+  font-size: 1.25rem;
+  width: 3.125rem;
+  height: 3.125rem;
+  z-index: 1;
+  transform: translateY(-50%);
+  border-radius: 100%;
+  background: var(--white-color);
+  color: var(--black-color);
+  font-weight: bold;
+  transition: 0.3s;
+}
+#wrapperHighlights #highlights-banner article button.prev {
+  left: -1.25rem;
+}
+#wrapperHighlights #highlights-banner article button.next {
+  right: -1.25rem;
+}
+#wrapperHighlights #highlights-banner article button:hover {
+  background: rgba(0, 0, 0, 0.3);
+  color: var(--white-color);
+}
+#wrapperHighlights #highlights-banner article ul {
+  position: relative;
+  height: 100%;
+}
+#wrapperHighlights #highlights-banner article ul li {
+  display: none;
+  transition: 0.3s;
+  animation-delay: 0.3s;
+  opacity: 1;
+  position: absolute;
+  inset: 0;
+  object-fit: cover;
+  opacity: 0;
+}
+#wrapperHighlights #highlights-banner article ul li img {
+  border-radius: 10px;
+  width: 100%;
+  height: 100%;
+}
+#wrapperHighlights #highlights-banner article ul li.active {
+  display: block;
+  opacity: 1;
+  animation: fadeIn alternate 2s;
+}
+#wrapperHighlights #highlights-new-products {
+  padding-bottom: 2.5rem;
+}
+#wrapperHighlights #highlights-new-products article h2 {
+  text-align: center;
+  color: var(--white-color);
+  padding-bottom: 1.25rem;
+}
+#wrapperHighlights #highlights-new-products article .popular-product-wrapper ul.list-product {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  gap: 1.25rem;
+}
+#wrapperHighlights #highlights-new-products article .popular-product-wrapper ul.list-product li {
+  background-position: center;
+  background-size: cover;
+  height: 18.75rem;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  transition: 0.3s;
+}
+#wrapperHighlights #highlights-new-products article .popular-product-wrapper ul.list-product li a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+#wrapperHighlights #highlights-new-products article .popular-product-wrapper ul.list-product li a .product-information {
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  color: var(--white-color);
+  display: grid;
+  padding: 1.25rem;
+  transition: 0.3s;
+}
+#wrapperHighlights #highlights-new-products article .popular-product-wrapper ul.list-product li a .product-information button {
+  width: 70px;
+  height: 30px;
+  border-radius: 10px;
+  transition: 0.3s;
+  background: var(--white-color);
+}
+#wrapperHighlights #highlights-new-products article .popular-product-wrapper ul.list-product li a .product-information button a {
+  color: var(--black-color);
+  display: block;
+  width: 100%;
+  height: 100%;
+  line-height: 1.875rem;
+}
+#wrapperHighlights #highlights-new-products article .popular-product-wrapper ul.list-product li a .product-information button:hover {
+  background: var(--black-color);
+}
+#wrapperHighlights #highlights-new-products article .popular-product-wrapper ul.list-product li a .product-information button:hover a {
+  color: var(--white-color);
+}
+#wrapperHighlights #highlights-new-products article .popular-product-wrapper ul.list-product li:hover {
+  transform: translateY(-10px);
+}
+#wrapperHighlights #highlights-new-products article .popular-product-wrapper ul.list-product li:hover .product-information {
+  opacity: 1;
+}
+#wrapperHighlights #products {
+  border: red solid 1px;
+}
+
+#wrapperFeedbacks {
+  padding-top: 5rem;
+}
+#wrapperFeedbacks #feedbacks-content, #wrapperFeedbacks #gallery {
+  padding: 2.5rem 0;
+}
+#wrapperFeedbacks #feedbacks-content article h2, #wrapperFeedbacks #gallery article h2 {
+  color: var(--white-color);
+  text-align: center;
+  padding-bottom: 1.25rem;
+}
+#wrapperFeedbacks #feedbacks-content article .feedbacks-text-list, #wrapperFeedbacks #gallery article .feedbacks-text-list {
+  display: grid;
+  grid-template-columns: 20% 20% 25% 25%;
+  gap: 1.25rem;
+}
+#wrapperFeedbacks #feedbacks-content article .feedbacks-text-list li, #wrapperFeedbacks #gallery article .feedbacks-text-list li {
+  transition: 0.3s;
+  border: var(--white-color) solid 1px;
+  border-radius: 10px;
+  overflow: hidden;
+  height: 350px;
+  position: relative;
+}
+#wrapperFeedbacks #feedbacks-content article .feedbacks-text-list li .feedbacks-product, #wrapperFeedbacks #gallery article .feedbacks-text-list li .feedbacks-product {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.5);
+  color: var(--white-color);
+  font-size: 1.25rem;
+  opacity: 0;
+  transition: 0.3s;
+}
+#wrapperFeedbacks #feedbacks-content article .feedbacks-text-list li img, #wrapperFeedbacks #gallery article .feedbacks-text-list li img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+#wrapperFeedbacks #feedbacks-content article .feedbacks-text-list li:hover .feedbacks-product, #wrapperFeedbacks #gallery article .feedbacks-text-list li:hover .feedbacks-product {
+  top: 0;
+  opacity: 1;
+}
+#wrapperQuote header {
+  border-bottom: var(--white-color) solid 1px;
+}
+#wrapperQuote #content {
+  padding-top: 5rem;
+}
+#wrapperQuote #content article {
+  padding: 2.5rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh - 5rem);
+}
+#wrapperQuote #content article p {
+  color: var(--white-color);
+  font-size: 1.25rem;
+}
+#wrapperQuote #content article p span {
+  animation: fadeIn alternate 2s;
+}
+
+#productsMockup {
+  padding-top: 5rem;
+  background: var(--black-color);
+}
+#productsMockup header {
+  border-bottom: var(--white-color) solid 1px;
+}
+#productsMockup #products-wrapper {
+  padding: 2.5rem 0;
+}
+#productsMockup #products-wrapper article ul {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  gap: 1.25rem;
+}
+#productsMockup #products-wrapper article ul li {
+  background-size: cover;
+  height: 18.75rem;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+}
+#productsMockup #products-wrapper article ul li .product-info {
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  color: var(--white-color);
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1.25rem;
+  transition: 0.3s;
+}
+#productsMockup #products-wrapper article ul li .product-info span {
+  text-align: center;
+}
+#productsMockup #products-wrapper article ul li .product-info button {
+  width: max-content;
+  padding: 10px;
+  align-self: center;
+  border-radius: 5px;
+  transition: 0.3s all;
+}
+#productsMockup #products-wrapper article ul li .product-info button a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  color: var(--black-color);
+}
+#productsMockup #products-wrapper article ul li .product-info button:hover {
+  background: var(--black-color);
+}
+#productsMockup #products-wrapper article ul li .product-info button:hover a {
+  color: var(--white-color);
+}
+#productsMockup #products-wrapper article ul li:hover .product-info {
+  top: 0;
+}
+#productsMockup #products-wrapper article .product-page-list {
+  padding-top: 1.25rem;
+}
+#productsMockup #products-wrapper article .product-page-list ul {
+  display: flex;
+  gap: 1.25rem;
+  justify-content: center;
+}
+#productsMockup #products-wrapper article .product-page-list li {
+  color: var(--white-color);
+  width: 1.25rem;
+  height: 1.25rem;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 1.25rem;
+  background-color: var(--black-color);
+}
+#productsMockup #products-wrapper article .product-page-list li:hover {
+  cursor: pointer;
+}
+#productsMockup #products-wrapper article .product-page-list li.active {
+  background-color: var(--white-color);
+  color: var(--black-color);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes transformWidth {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+@keyframes animationSlideToTop {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+@keyframes animationSlideToggle {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+@keyframes animationSlideToggleOpposite {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
